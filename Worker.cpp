@@ -22,6 +22,15 @@ Worker::~Worker()
 
 void Worker::setName(const char* pName)
 {
+	if (!pName)
+	{
+		std::cout << "[ INFO ] Worker: invalid value to set name!\n";
+		return;
+	}
+
+	if (name)
+		delete[] name;
+
 	size_t lenght = std::strlen(pName) + 1;
 	name = new char[lenght];
 	for (int i = 0; i < lenght; i++)
@@ -30,6 +39,15 @@ void Worker::setName(const char* pName)
 
 void Worker::setRole(const char* pRole)
 {
+	if (!pRole)
+	{
+		std::cout << "[ INFO ] Worker: invalid value to set role!\n";
+		return;
+	}
+
+	if (role)
+		delete[] role;
+
 	size_t lenght = std::strlen(pRole) + 1;
 	role = new char[lenght];
 	for (int i = 0; i < lenght; i++)

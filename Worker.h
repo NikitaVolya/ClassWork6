@@ -23,8 +23,8 @@ public:
 
 	void setName(const char* pName);
 	void setRole(const char* pRole);
-	void setStartYear(int pStartYear) { startYear = pStartYear; }
-	void setSalary(int pSalary) { salary = pSalary; }
+	void setStartYear(int pStartYear) { if (pStartYear > 0) startYear = pStartYear; }
+	void setSalary(int pSalary) { if (pSalary > 0) salary = pSalary; }
 
 	void print(const char* end = "\n") const;
 
